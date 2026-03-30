@@ -30,14 +30,12 @@
 - `qprca.py` — front active executable
 
 ## 2.3 March 20 microscopic correction notes absorbed into Volume II
-*(These working notes were folded into `Volume_II_Microscopic_Derivation.md` and are retained in dev archive only.)*
 - `HPF_Microscopic_Legality_Theorem_Spine_v1_2026-03-20.md`
 - `HPF_Operator_Richness_Note_v1_2026-03-20.md`
 - `HPF_Predecessor_Burden_Redefinition_v1_2026-03-20.md`
 - `HPF_Bridge_Recalibration_Note_v0_2_7_2026-03-20.md`
 
 ## 2.4 Historical March 19 roadmap / guide notes
-*(Historical provenance documents retained in dev archive only.)*
 - `HPF_Canonical_Package_Guide_Consolidated_Final_2026-03-19.md`
 - `HPF_Closure_and_Theorem_Roadmap_Consolidated_2026-03-19.md`
 - `HPF_Closure_Program_Theorem_Targets_Updated_2026-03-19.md`
@@ -48,35 +46,27 @@
 # 3. Executable supersession map
 
 ## 3.1 Historical microscopic line
-- v0.1 = first executable legality harness
-- v0.1.1 = variable predecessor algebra
-- v0.1.2 = normalized predecessor stable historical baseline
-- v0.1.3 = richer non-predecessor exploratory branch
+- **v0.1** = first executable legality harness
+- **v0.1.1** = variable predecessor algebra
+- **v0.1.2** = normalized predecessor stable historical baseline
+- **v0.1.3** = richer non-predecessor exploratory branch
 
 ## 3.2 Enriched-canon executable line
-- v0.2.0 = first enriched-canon executable reference
-- v0.2.1 = first explicit derived-zeta recovery executable
-- v0.2.2 = grouped-L2 promotion branch
-- v0.2.3 = tuned grouped-L2 projection branch
-- v0.2.4 = floor-fixed grouped-L2 projection branch
-- v0.2.5 = reversible-registry repair branch
-- v0.2.6 = continuation-ambiguity executable patch
-- v0.2.7 = bridged continuation-ambiguity line with legality-tail-sensitive bridge recalibration
-- v0.2.8 = existence-sensor integration; current front executable
+- **v0.2.0** = first enriched-canon executable reference
+- **v0.2.1** = first explicit derived- $\zeta$ recovery executable
+- **v0.2.2** = grouped- $L_2$ promotion branch
+- **v0.2.3** = tuned grouped- $L_2$ projection branch
+- **v0.2.4** = floor-fixed grouped- $L_2$ projection branch
+- **v0.2.5** = reversible-registry repair branch
+- **v0.2.6** = continuation-ambiguity executable patch
+- **v0.2.7** = bridged continuation-ambiguity line with legality-tail-sensitive bridge recalibration
+- **v0.2.8** = existence-sensor integration; current front executable
 
 ## 3.3 Current recommended executable status
-- **front active executable:** `qprca.py`
-- **existence-sensor protocol note:** `Existence_Sensor_Protocol.md`
-- **existence-sensor test report:** existence-sensor report JSON (internal/offline artifact)
-- **sigma pressure test artifact:** `sigma_pressure_test.json`
-- **historical stable baseline reference:** v0.1.2 normalized predecessor baseline (retained conceptually through Volume II discussion)
-- **historical floor-fix milestone:** v0.2.4 remains the key pre-registry-repair anchor for the earlier derived-$\zeta$ recovery line
-
-Interpretation:
-- v0.2.8 is the current front executable embodiment of the enriched canon,
-- v0.2.7 was the bridge-recalibrated predecessor; retained in dev archive,
-- v0.2.4 remains an important historical calibration milestone,
-- v0.1.2 remains the clean historical microscopic baseline.
+- **Front active executable:** `qprca.py`
+- **Existence-sensor protocol note:** `Existence_Sensor_Protocol.md`
+- **Historical stable baseline reference:** v0.1.2 normalized predecessor baseline
+- **Historical floor-fix milestone:** v0.2.4 remains the key pre-registry-repair anchor for the earlier derived- $\zeta$ recovery line
 
 ---
 
@@ -86,15 +76,14 @@ Interpretation:
 Where older wording conflicts with later March 19 closure/savepoint language, the later March 19 status controls.
 
 ## 4.2 Recovery rule
-Older files may still contribute architecture, motivation, derivation history, or clarifying distinctions, provided they do not override current truth-status.
+Older files may still contribute architecture, motivation, or derivation history, provided they do not override current truth-status.
 
 ## 4.3 Anti-drift rule
 No recovered or older text may be used to:
-- collapse legality into validity,
-- collapse geometry into the regulator,
-- demote internally derived or canon-proved structures back to merely fitted or merely open language,
-- promote open frontier items to fully closed,
-- erase the fixed HPF $\to$ MDEA $\to$ geometry/gravity $\to$ QPRCA order.
+- Collapse legality into validity.
+- Collapse geometry into the regulator.
+- Demote internally derived structures back to merely "fitted" language.
+- Erase the fixed **HPF $\to$ MDEA $\to$ geometry/gravity $\to$ QPRCA** order.
 
 ---
 
@@ -103,73 +92,45 @@ No recovered or older text may be used to:
 ## 5.1 Theorem-track promotion
 The closure-program note made explicit that the best next move is a theorem-and-reproduction track rather than another broad rewrite.
 
-## 5.2 Derived-zeta recovery promotion
-The package guide and derived-zeta notes made explicit that smooth corridor recovery is now an official closure target, not a side experiment.
+## 5.2 Derived- $\zeta$ recovery promotion
+Smooth corridor recovery is now an official closure target, not a side experiment.
 
-## 5.3 Grouped-L2 promotion
-The grouped-L2 recheck established that additive aggregation was over-driving ordinary runs toward hard saturation, while grouped-L2 materially improved acceptance and corridor behavior.
+## 5.3 Grouped- $L_2$ promotion
+Grouped- $L_2$ materially improved acceptance and corridor behavior compared to additive aggregation.
 
-## 5.4 Projection tuning and floor fix
-The tuning note localized the v0.2.3 scaling problem. The floor-fix update and v0.2.4 calibration work then repaired the projection topology by reopening the sub-onset stable branch without losing onset/corridor/hard representation.
+## 5.4 Reversible-registry repair
+The v0.2.5 repair corrected a bijection defect in the rule family, promoting reversibility honesty to a coded property.
 
-## 5.5 Reversible-registry repair
-The March 20 operator-richness audit made explicit that the old live registry still contained a rule that failed the file's own bijection check. The v0.2.5 repair corrected that defect and promoted reversibility honesty from assumption to coded property.
-
-## 5.6 Continuation-ambiguity promotion
-Once the registry became fully bijective, the old raw predecessor-count burden ceased to be the right microscopic primitive. The March 20 redefinition note promoted continuation ambiguity / local operator ambiguity as the correct replacement direction, and that logic is now absorbed into the merged Volume II.
-
-## 5.7 Bridge recalibration
-The first continuation-ambiguity patch preserved the corridor but exposed that the coarse bridge had become too mean-based to distinguish the hard edge. The v0.2.7 recalibration added legality-tail-sensitive coarse information and recovered the four anchor regimes again.
-
-## 5.8 Package refresh on 2026-03-20
-The updated package no longer treats v0.2.4 as the front active executable reference. The live package state is now:
-- updated Volume I (`Volume_I_Foundations.md`),
-- merged Volume II with March 20 corrections folded in (`Volume_II_Microscopic_Derivation.md`),
-- updated Volume III (`Volume_III_Provenance_and_Status.md`),
-- v0.2.8 Python executable (`qprca.py`),
-- existence-sensor protocol note and test artifacts.
+## 5.5 Continuation-ambiguity promotion
+Once the registry became fully bijective, raw predecessor-count became trivial. Continuation ambiguity / local operator ambiguity was promoted as the correct microscopic primitive.
 
 ---
 
 # 6. Reading order
 
-1. `README.md` — front page and reading guide
-2. `Volume_I_Foundations.md` — master canon
-3. `Volume_II_Microscopic_Derivation.md` — microscopic and executable line
-4. `Volume_III_Provenance_and_Status.md` — provenance and live-reference map
-5. `Volume_IV_Lambda_and_Dark_Matter.md` — vacuum-sector derivation package
-6. `Symbol_Index.md` — canonical symbol reference
-7. `Existence_Sensor_Protocol.md` and `Governor_Transfer_Theorem.md` — support notes
-8. `qprca.py` and `sigma_pressure_test.json` — operational artifacts
+1. `README.md`
+2. `Volume_I_Foundations.md`
+3. `Volume_II_Microscopic_Derivation.md`
+4. `Volume_III_Provenance_and_Status.md`
+5. `Volume_IV_Lambda_and_Dark_Matter.md`
+6. `Symbol_Index.md`
+7. `Existence_Sensor_Protocol.md`
+8. `qprca.py`
 
 ---
-
-# 7. One-line package read
-
-The package now preserves the enriched March canon, integrates the executable recovery line, and makes clear which artifacts are current public authority, support documents, executable support, or historical lineage.
-
----
-
 
 # 8. Post-March-20 additions — 2026-03-29
 
 ## 8.1 Symbol index
 
-`Symbol_Index.md` is the current canonical symbol reference for the package. It travels with the Volume I–III set and now reflects the corrected no-`/2` radial law and the revised no-`1.4` phase canon.
-
-Key additions and corrections:
-- $c$ as scheduler regulator through the identity $L_{vac}\equiv c\cdot t_{sched}$
-- Vacuum-sector symbols: $L_{vac}$, $\varphi$, $b$, $f_{coh}$, $\alpha_{vac}$, $\Omega_{\rm dm}$, $n$, $\kappa_{BCC}$, $\varepsilon$
-- Phase section updated so the live landmarks are $S_{\rm blur}=1.05$, $S_{\rm ent}=1.3806$, and $S_{\rm cap}=5.7889$
-- No separate $1.4$ phase marker remains in active canon
+`Symbol_Index.md` is the current canonical symbol reference. It reflects the corrected no-`/2` radial law and the revised phase landmarks:
+- $c$ as scheduler regulator: $L_{\mathrm{vac}} \equiv c \cdot t_{\mathrm{sched}}$
+- Vacuum-sector: $L_{\mathrm{vac}}, \varphi, b, f_{\mathrm{coh}}, \alpha_{\mathrm{vac}}, \Omega_{\mathrm{dm}}, n, \kappa_{\mathrm{BCC}}, \varepsilon$
+- Phase landmarks: $S_{\mathrm{blur}}=1.05, S_{\mathrm{ent}}=1.3806, S_{\mathrm{cap}}=5.7889$
 
 ## 8.2 Lambda and dark matter derivation package
 
-`Volume_IV_Lambda_and_Dark_Matter.md` is the current serious-reader derivation document for the vacuum sector, now updated with the selector local robustness result.
-
-It derives the cosmological constant $\Lambda$ and the dark-matter fraction from the HPF substrate geometry with the active branch split kept explicit.
-
-**Current outputs:**
+`Volume_IV_Lambda_and_Dark_Matter.md` derives the cosmological constant $\Lambda$ and dark-matter fraction from HPF substrate geometry.
 
 | Quantity | HPF Derived | Observed | Gap |
 |----------|------------|----------|-----|
@@ -177,31 +138,21 @@ It derives the cosmological constant $\Lambda$ and the dark-matter fraction from
 | Dark matter fraction | $26.29\%$ | $26.8\%$ | $0.51\%$ |
 
 **Current locked results:**
+- Corrected radial law: $L_{\mathrm{vac}}=R_H/\varphi^{220}$
+- DM Bridge: $\alpha_{\mathrm{vac}}=\sqrt{f_{\mathrm{coh}}}$
+- $\Omega_{\mathrm{dm}}=1-\alpha_{\mathrm{vac}}$
+- Phase chain: $1.05 \to 1.3806 \to 5.7889 \to n=220 \to L_{\mathrm{vac}} \to \Lambda$
 
-- corrected radial law: $L_{vac}=R_H/\varphi^{220}$ with no bipartite `/2` in the radial identity
-- $\alpha_{vac}=\sqrt{f_{coh}}$ under the active governor-transfer lemma
-- $\Omega_{\rm dm}=1-\alpha_{vac}$ as the deferred coherent-support complement
-- active phase chain: $1.05 \rightarrow 1.3806 \rightarrow 5.7889 \rightarrow n=220 \rightarrow L_{vac} \rightarrow \Lambda$
-- continuum-emergence bound carried with exponent $S_{\rm ent}=1.3806$, not by a separate $1.4$ marker
+---
 
-**Truth-status:** internally consolidated. The shell selector and phase landmarks remain candidate-locked where stated, while the DM bridge $\alpha_{vac}=\sqrt{f_{coh}}$ is proved internally within HPF canon.
+# 9. Updated reading order
 
-**Relationship to existing canon:** This package extends the HPF regulatory architecture into the vacuum sector. It does not supersede Volumes I–III. Those volumes remain the primary canon for the regulator architecture; the Lambda/dark-matter package is a downstream derivation built on that substrate architecture.
-
-**Current package navigation / support files:**
-- internal consolidated master package note
-- internal package manifest note
-- internal selector robustness note
-- `Governor_Transfer_Theorem.md`
-
-## 8.3 Updated reading order
-
-1. `README.md` — front page and reading guide
-2. `Volume_I_Foundations.md` — master canon
-3. `Volume_II_Microscopic_Derivation.md` — microscopic and executable line
-4. `Volume_III_Provenance_and_Status.md` — provenance and live-reference map
-5. `Volume_IV_Lambda_and_Dark_Matter.md` — full reader-facing vacuum-sector paper
-6. `Symbol_Index.md` — canonical symbol reference
-7. `Existence_Sensor_Protocol.md` — existence-sensor support note
-8. `Governor_Transfer_Theorem.md` — DM bridge support note
-9. `qprca.py` and `sigma_pressure_test.json` — active operational artifacts
+1. `README.md`
+2. `Volume_I_Foundations.md`
+3. `Volume_II_Microscopic_Derivation.md`
+4. `Volume_III_Provenance_and_Status.md`
+5. `Volume_IV_Lambda_and_Dark_Matter.md`
+6. `Symbol_Index.md`
+7. `Existence_Sensor_Protocol.md`
+8. `Governor_Transfer_Theorem.md`
+9. `qprca.py`
