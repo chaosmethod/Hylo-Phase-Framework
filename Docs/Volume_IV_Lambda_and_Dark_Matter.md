@@ -164,9 +164,9 @@ The BCC bipartite lattice contributes three substrate-native suppression factors
 
    ## 5.2 Causal Support Fraction
 
-   Arc length: L\_arc = (1/b)*sqrt(1+b^2)*$R_H - L_vac$ = spiral\_factor \* R\_H
+   Arc length: L\_arc = (1/b)*sqrt(1+b^2)*(R\_H - L\_vac) = spiral\_factor \* R\_H
 
-   Coherent support fraction: f\_coh = L\_arc/$2*pi*R_H$ = (1/(2*pi*b))\*sqrt(1+b^2) = 0.5434
+   Coherent support fraction: f\_coh = L\_arc/(2*pi*R\_H) = (1/(2*pi*b))\*sqrt(1+b^2) = 0.5434
 
    f\_coh is a dimensionless geometric occupancy fraction. It is NOT a time rate and NOT yet alpha\_vac. Note: f\_coh ≈ 0.5434 ≈ 1/2 is not a coincidence — the Fibonacci spiral naturally traverses about half the spherical boundary because only half the BCC sites are active per scheduler tick. The geometry encodes the bipartite physics. This is where the bipartite /2 factor belongs — in f\_coh — NOT in the radial fixed-point law.
 
