@@ -150,42 +150,38 @@ This appendix aligns the symbol index with the active canonical paper. Every liv
 
 | Symbol | Meaning | Origin | Truth-status | Primary use |
 |---|---|---|---|---|
-| \(\phi\) | Golden ratio / Fibonacci growth ratio | Scheduler recurrence | Derived / substrate-native | Spiral growth, shell spacing |
-| \(b=\ln\phi/(\pi/2)\) | Log-spiral growth parameter | Quarter-turn Fibonacci/BCC embedding | Derived | Defines causal-boundary spiral |
-| \(f_{coh}\) | Coherent support fraction | Spiral-supported fraction of spherical causal boundary | Derived geometric quantity | Boundary support reservoir |
-| \(\alpha_{vac}=\sqrt{f_{coh}}\) | Post-governor vacuum availability | One-step governor transfer from support to availability | Proved internally within HPF canon | Usable vacuum fraction |
-| \(\Omega_{\rm dm}=1-\alpha_{vac}\) | Dark matter fraction | Deferred coherent-support complement after governor transfer | Downstream derived output | Dark-matter result |
-| \(L_{vac}\) | Substrate resolution scale | Scheduler identity \(L_{vac}=c\,t_{sched}\) and corrected radial law \(L_{vac}=R_H/\phi^n\) | Derived once \(n\) and \(R_H\) are fixed | Vacuum scale for Lambda branch |
-| \(c\) | Scheduler regulator | Tick-rate identity of substrate | Derived / substrate-native | Defines scheduler-time scale |
-| \(\kappa_{BCC}=2\) | BCC geometric coefficient | Coordination x bipartite x LMS mirror | Derived | Support geometry coefficient |
+| $\(\phi\)$ | Golden ratio / Fibonacci growth ratio | Scheduler recurrence | Derived / substrate-native | Spiral growth, shell spacing |
+| $\(b=\ln\phi/(\pi/2)\)$ | Log-spiral growth parameter | Quarter-turn Fibonacci/BCC embedding | Derived | Defines causal-boundary spiral |
+| $\(f_{coh}\)$ | Coherent support fraction | Spiral-supported fraction of spherical causal boundary | Derived geometric quantity | Boundary support reservoir |
+| $\(\alpha_{vac}=\sqrt{f_{coh}}\)$ | Post-governor vacuum availability | One-step governor transfer from support to availability | Proved internally within HPF canon | Usable vacuum fraction |
+| $\(\Omega_{\rm dm}=1-\alpha_{vac}\)$ | Dark matter fraction | Deferred coherent-support complement after governor transfer | Downstream derived output | Dark-matter result |
+| $\(L_{vac}\)$ | Substrate resolution scale | Scheduler identity $\(L_{vac}=c\,t_{sched}\)$ and corrected radial law $\(L_{vac}=R_H/\phi^n\)$ | Derived once $\(n\)$ and $\(R_H\)$ are fixed | Vacuum scale for Lambda branch |
+| $\(c\)$ | Scheduler regulator | Tick-rate identity of substrate | Derived / substrate-native | Defines scheduler-time scale |
+| $\(\kappa_{BCC}=2\)$ | BCC geometric coefficient | Coordination x bipartite x LMS mirror | Derived | Support geometry coefficient |
 
 ### 12.2 Phase-landmark and selector branch
 
 | Symbol / Value | Meaning | Origin | Truth-status | Primary use |
 |---|---|---|---|---|
-| \(S_{\rm blur}=1.05\) | Blur / coherence-loss onset | Lu atom-blur result mapped into HPF phase variable | Empirically anchored under HPF mapping | Lower anchor of \(\zeta(S)\) |
-| \(S_{\rm ent}=1.3806\) | Sharpened entropy-active onset | Active HPF phase landmark | Candidate-locked | Lower limit of shell-selection integral |
-| \(S_{\rm ent}=1.3806\) | Active entropy onset / redistribution exponent | Active HPF phase landmark | Candidate-locked | Lower limit of shell-selection integral; exponent in continuum-suppression law |
-| \(S_{\rm cap}=5.7889\) | Capacity wall / saturation ceiling | Active HPF phase ceiling | Candidate-locked | Upper limit of shell-selection integral |
-| \(k=11\) | Gate steepness | Working \(\zeta(S)\) calibration | Empirically tuned / operational | Blur-gate sharpness |
-| \(24\) | Sector multiplicity | Native cubic/BCC sector count | Structural input in active selector | Converts phase span into shell count |
-| \(n=220\) | Selected Fibonacci shell index | Integrated entropy-phase budget | Candidate-locked selector | Fixes \(L_{vac}\) in active canon |
-| \(e^{3\pi/2}=111.32\) | 3D BCC streaming factor | Three spatial streaming steps of \(\pi/2\) | Derived / substrate-native | Dimensional suppression factor |
-| \(H_0=67.4\) km/s/Mpc | External cosmological anchor | Planck 2018 | Empirical anchor only | Optional \(R_H=c/H_0\) consistency anchor |
+| $\(S_{\rm blur}=1.05\)$ | Blur / coherence-loss onset | Lu atom-blur result mapped into HPF phase variable | Empirically anchored under HPF mapping | Lower anchor of $\(\zeta(S)\)$ |
+| $\(S_{\rm ent}=1.3806\)$ | Sharpened entropy-active onset | Active HPF phase landmark | Candidate-locked | Lower limit of shell-selection integral |
+| $\(S_{\rm ent}=1.3806\)$ | Active entropy onset / redistribution exponent | Active HPF phase landmark | Candidate-locked | Lower limit of shell-selection integral; exponent in continuum-suppression law |
+| $\(S_{\rm cap}=5.7889\)$ | Capacity wall / saturation ceiling | Active HPF phase ceiling | Candidate-locked | Upper limit of shell-selection integral |
+| $\(k=11\)$ | Gate steepness | Working $\(\zeta(S)\)$ calibration | Empirically tuned / operational | Blur-gate sharpness |
+| $\(24\)$ | Sector multiplicity | Native cubic/BCC sector count | Structural input in active selector | Converts phase span into shell count |
+| $\(n=220\)$ | Selected Fibonacci shell index | Integrated entropy-phase budget | Candidate-locked selector | Fixes $\(L_{vac}\)$ in active canon |
+| $\(e^{3\pi/2}=111.32\)$ | 3D BCC streaming factor | Three spatial streaming steps of $\(\pi/2\)$ | Derived / substrate-native | Dimensional suppression factor |
+| $\(H_0=67.4\)$ km/s/Mpc | External cosmological anchor | Planck 2018 | Empirical anchor only | Optional $\(R_H=c/H_0\)$ consistency anchor |
 
 ### 12.3 Minimal explanation chain
 
 For the dark-matter branch:
 
-\[
-\phi \rightarrow b \rightarrow f_{coh} \rightarrow \alpha_{vac} \rightarrow \Omega_{\rm dm}.
-\]
+$\phi \rightarrow b \rightarrow f_{coh} \rightarrow \alpha_{vac} \rightarrow \Omega_{\rm dm}.$
 
 For the Lambda branch:
 
-\[
-1.05 \rightarrow 1.3806 \rightarrow 5.7889 \rightarrow n=220 \rightarrow L_{vac} \rightarrow \Lambda.
-\]
+$1.05 \rightarrow 1.3806 \rightarrow 5.7889 \rightarrow n=220 \rightarrow L_{vac} \rightarrow \Lambda.$
 
 ### 12.4 Usage rule
 
