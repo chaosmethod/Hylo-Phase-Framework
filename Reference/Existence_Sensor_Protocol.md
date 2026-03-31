@@ -20,9 +20,9 @@ Before the full sweep, the following are fixed:
 
 2. **Candidate minimal Sigma-equivalence**
    - Continuation signature:
-$$
-     \Sigma=(T_{\rm out}, C_{\rm mode}, R_{\rm eng})
-$$
+
+     $\Sigma=(T_{\rm out}, C_{\rm mode}, R_{\rm eng})$
+
    - `T_out`: categorical transport outcome
    - `C_mode`: categorical collision / occupancy handling mode
    - `R_eng`: categorical non-transport resource engagement
