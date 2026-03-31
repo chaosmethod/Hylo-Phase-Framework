@@ -85,7 +85,7 @@ Post-hoc observation: 5.7889 matches the mantissa of μ_B (Bohr magneton) in eV/
 ## 4. The Shell Selector
 
 **Definition 4.1 (Integer shell selector).**  
-$$n_{\rm sel} = \operatorname{round}\!\left[\frac{24}{\ln\phi} \int_{S_{\rm ent}}^{S_{\rm cap}} (1 - \zeta(S))\, dS\right]$$
+$$n_{\rm sel} = \mathrm{round}\!\left[\frac{24}{\ln\phi} \int_{S_{\rm ent}}^{S_{\rm cap}} (1 - \zeta(S))\, dS\right]$$
 
 with S_ent = 1.3806, S_cap = 5.7889, k = 11, anchor = 1.05.
 
@@ -95,7 +95,7 @@ $$\int_{1.3806}^{5.7889} (1 - \zeta(S))\, dS = 4.4059$$
 
 $$n_{\rm raw} = \frac{24}{\ln\phi} \times 4.4059 = 219.742$$
 
-$$n_{\rm sel} = \operatorname{round}(219.742) = 220$$
+$$n_{\rm sel} = \mathrm{round}(219.742) = 220$$
 
 **Robustness.** n = 220 is stable across S_cap ∈ [5.789, 5.83] and S_low ∈ [1.37, 1.39]. It is not a knife-edge result.
 
