@@ -253,21 +253,7 @@ This split is intentional. It prevents active canon, support infrastructure, can
 - older wording that treats the 4-bit alphabet as merely "toy"
 
 ---
-
-# 8. Excluded contamination
-
-The file `ihc_ijt_corrected.pdf` is excluded from the framework corpus.
-
-It is:
-- not part of HPF,
-- not the author's work,
-- not to be cited in provenance,
-- not to be summarized as framework material,
-- not to be folded into rewrites or package maps.
-
----
-
-# 9. Recommended reading order
+# 8. Recommended reading order
 
 For a serious first pass through the repository:
 
@@ -290,7 +276,7 @@ Candidate notes should be read after the canon and reference stack, not before.
 
 ---
 
-# 10. Short package freeze
+# 9. Short package freeze
 
 > HPF is a regulatory physics OS, not a catch-all theory. It governs legality, validity, and handoff across bounded execution regimes on a BCC Fibonacci substrate. The active package is the four-volume canon plus the live reference stack. The corrected no-`/2` radial law is active. The live lower onset is $S_{\rm ent}=1.3806$. The residual denominator is $\eta=1/48$ from BCC 24-sector Nyquist geometry with zero free parameters. `S_cap` is substrate-native / derived. The 4-bit alphabet $(n_L,n_R,b,q)$ is the candidate-locked fundamental operator grammar with 15 active non-vacuum microstates. Candidate phenomenology remains separated from canon, and excluded contamination remains excluded.
 
