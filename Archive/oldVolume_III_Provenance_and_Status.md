@@ -167,7 +167,9 @@ Once the registry became fully bijective, raw predecessor-count became trivial. 
 
 ## 8.4 Collapse-theorem status reflection
 
-`Delta_Collapse_Theorem_Note_v7U.md` is the live theorem-track note for the active \(S_{m cap}\) / \(\delta_{m collapse}\) spine. Its current classification is **internal structural lock / near-theorem derivation**. The active status split is:
+`Delta_Collapse_Theorem_Note_v7U.md` is the live theorem-track note for the active \(S_{
+m cap}\) / \(\delta_{
+m collapse}\) spine. Its current classification is **internal structural lock / near-theorem derivation**. The active status split is:
 
 - \(k \propto 1/b\): proved within current canon
 - \(b^2\) exclusion: proved by the straddling-sector exclusion argument
@@ -181,10 +183,17 @@ This note advances the collapse correction from a loose candidate block to the c
 
 `HPF_Correction_Note_Bcap_and_ChiGeom.md` supplies two locked corrections that control provenance and starter calibration language in the active package:
 
-- \(B_{m cap} = 0.25\,M_{m cap}\) is the live starter value; the older \(0.15\,M_{m cap}\) reserve is superseded.
-- The equal-weight starter geometry burden \(\chi_{m geom}\) is superseded operationally by the dominance-aware starter diagnostic
+- \(B_{
+m cap} = 0.25\,M_{
+m cap}\) is the live starter value; the older \(0.15\,M_{
+m cap}\) reserve is superseded.
+- The equal-weight starter geometry burden \(\chi_{
+m geom}\) is superseded operationally by the dominance-aware starter diagnostic
   \[
-  \chi^*_{m geom} = (1-\gamma)\chi_{m lin} + \gamma\chi_{m dom}.
+  \chi^*_{
+m geom} = (1-\gamma)\chi_{
+m lin} + \gamma\chi_{
+m dom}.
   \]
   The equal-weight form remains provenance only.
 
