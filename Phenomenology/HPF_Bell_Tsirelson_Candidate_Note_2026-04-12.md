@@ -71,7 +71,7 @@ At each sector $j$, the directional qubit $\{|L_j\rangle, |R_j\rangle\}$ has "le
 
 ## 3.2 The mirror operator acts through the bipartite update
 
-$M = JK$ is not a static operator — it acts by propagating through the bipartite update cycle $\mathcal{U}_{B \to A} \circ \mathcal{U}_{A \to B}$. The time-reversal component $K$ reverses the update direction; the symplectic swap $J$ exchanges the directional labels with antisymmetric sign.
+$M = JK$ is not a static operator — it acts by propagating through the bipartite update cycle $\mathcal {U} _ {B \to A} \circ \mathcal {U} _ {A \to B}$. The time-reversal component $K$ reverses the update direction; the symplectic swap $J$ exchanges the directional labels with antisymmetric sign.
 
 The physical reach of $M$ across the ring is therefore set by the bipartite propagation kernel — the same kernel whose effective path length was derived in the mirror-buffer obligation closure.
 
@@ -80,7 +80,7 @@ The physical reach of $M$ across the ring is therefore set by the bipartite prop
 From the mirror-buffer obligation closure (2026-04-12):
 
 - **Forward half-step** $\mathcal{U}_{A \to B}$: transports information across 1 sector. Full weight — all information is new to $B$. Effective contribution: **1**.
-- **Mirror half-step** $\mathcal{U}_{B \to A}$: transports mixed $B$ state across 1 sector, but only the $B$-origin fraction (weight $1/2$, forced by bipartite symmetry) is new to $A$. Effective contribution: **$1/2$**.
+- **Mirror half-step** $\mathcal{U}_{B \to A}$: transports mixed $B$ state across 1 sector, but only the $B$ -origin fraction (weight $1/2$, forced by bipartite symmetry) is new to $A$. Effective contribution: **$1/2$**.
 - **Total effective reach:** $1 + 1/2 = 3/2$ sectors.
 
 This is the reach derived from:
