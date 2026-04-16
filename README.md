@@ -1,7 +1,7 @@
 # Hylo Phase Framework (HPF)
 
 ## Canonical Presentation Package
-### Repository Front Page and Reading Guide — Milestone Lock State (2026-04-10)
+### Repository Front Page and Reading Guide — Milestone Lock State (2026-04-15)
 
 **Previously:** *Holographic Projection Framework (HPF)*
 
