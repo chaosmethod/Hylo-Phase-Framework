@@ -124,7 +124,7 @@ $$L_{\rm vac} = \frac{R_H}{\varphi^n}$$
 with no `/2` factor in the radial identity.
 
 Current live vacuum-branch state:
-- $n=220$ is candidate-locked through the selector chain,
+- $n=220$ is geometry-native: $n = \mathrm{round}(N_s^2/\varphi^2) = \mathrm{round}(220.012) = 220$,
 - $\Lambda \approx 1.081 \times 10^{-52}\ \mathrm{m^{-2}}$ in the current package,
 - $\Omega_{\rm dm} \approx 26.29\%$ through the governor-transfer branch,
 - `S_cap` is now treated as **substrate-native / derived**, not as theoretically open.
@@ -191,10 +191,16 @@ This split is intentional. It prevents active canon, support infrastructure, can
   Package-status memo and live correction/status tracker.
 
 - `Reference/HPF_Mirror_Buffer_Correction_Note_draft.md`
-  Candidate passive mirror buffer correction for sublattice-sensitive observables. Three obligations open.
+  Candidate passive mirror buffer correction for sublattice-sensitive observables. All three obligations closed as of 2026-04-12.
 
 - `Reference/hpf_boundary_condition_note_mirror_buffer_handoff_2026-04-10.md`
   Boundary condition note closing the geometric-prose phase of the mirror buffer inquiry and defining the QPRCA handoff obligations.
+
+- `Reference/HPF_b72_Passive_Mirror_Correction_Reference_2026-04-15.md`
+  Standalone consolidation of the b/72 passive mirror correction. Unifies the mirror-buffer draft, obligation closure, and Bell-Tsirelson candidate note. All three obligations closed.
+
+- `Reference/HPF_QPRCA_Hard_Execution_Protocol_2026-04-15.md`
+  Protocol note for the k=11→∞ transition, frozen boundary states, and mandatory continuation under QPRCA hard-gate execution. Executable-confirmed 2026-04-15.
 
 - `Reference/HPF_Regulator_Availability_Bridge_Note_2026-04-10.md`
   Bridge note mapping the portable regulator object $\alpha(x)$ across the dimensional ladder from local availability to vacuum closure $\alpha_{\rm vac}$.
@@ -226,6 +232,9 @@ This split is intentional. It prevents active canon, support infrastructure, can
 
 - `Src/qprca.py`
   Front active executable interface.
+
+- `Src/HPF_QPRCA_BCC_v0_3_0.py`
+  BCC bipartite automaton — v0.3.0. Closes four build gaps from the 2026-04-15 handoff: BCC A/B sublattice topology, Fibonacci shell propagation, full B/R/A/P channel activation, and DCT return-class capacity executable verification. Derives η=1/48 and n=220 from geometry; S_cap no longer imported.
 
 - `Src/HPF_QPRCA_MicroToy_v0_2_7_BridgedContinuationAmbiguity_2026-03-20.py`
   Canonical March 20 executable reference. The filename is historical; the 4-bit alphabet documented there is now treated under the April 9 epistemic upgrade rather than as a toy harness.
@@ -278,7 +287,7 @@ Candidate notes should be read after the canon and reference stack, not before.
 
 # 9. Short package freeze
 
-> HPF is a regulatory physics OS, not a catch-all theory. It governs legality, validity, and handoff across bounded execution regimes on a BCC Fibonacci substrate. The active package is the four-volume canon plus the live reference stack. The corrected no-`/2` radial law is active. The live lower onset is $S_{\rm ent}=1.3806$. The residual denominator is $\eta=1/48$ from BCC 24-sector Nyquist geometry with zero free parameters. `S_cap` is substrate-native / derived. The 4-bit alphabet $(n_L,n_R,b,q)$ is the candidate-locked fundamental operator grammar with 15 active non-vacuum microstates. Candidate phenomenology remains separated from canon, and excluded contamination remains excluded.
+> HPF is a regulatory physics OS, not a catch-all theory. It governs legality, validity, and handoff across bounded execution regimes on a BCC Fibonacci substrate. The active package is the four-volume canon plus the live reference stack. The corrected no-`/2` radial law is active. The live lower onset is $S_{\rm ent}=1.3806$. The residual denominator is $\eta=1/48$ from BCC 24-sector Nyquist geometry with zero free parameters. `S_cap` is substrate-native / derived. $n=220$ is geometry-native: $\mathrm{round}(N_s^2/\varphi^2)$. The 4-bit alphabet $(n_L,n_R,b,q)$ is the candidate-locked fundamental operator grammar with 15 active non-vacuum microstates. Candidate phenomenology remains separated from canon, and excluded contamination remains excluded.
 
 ---
 
