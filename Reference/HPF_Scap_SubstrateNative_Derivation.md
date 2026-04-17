@@ -138,6 +138,7 @@ $$
 S_{\rm cap} = S_{\rm ent} + \frac{N_s^2}{\varphi^2}\cdot\frac{\ln\varphi}{N_s} = S_{\rm ent} + \frac{N_s\ln\varphi}{\varphi^2}.
 $$
 
+Status of the $N_s²/φ²$ form. The cell-counting picture motivating this form — the BCC Fibonacci spiral covering $N_s²$ lattice cells per full causal arc, divided by per-shell golden-ratio gain $φ²$ — is currently stated in the QPRCA v0.3.0 module docstring and not in a standalone derivation note. The form yields n = round(220.012) = 220 consistently with the operative identity, but the underlying cell-count premise (N_s² cells per causal arc) remains an open sub-derivation. Accordingly, n = 220 is treated here as geometry-native under a candidate cell-counting premise, pending a standalone closure of the arc-coverage argument.
 ---
 
 # 5. Why the remaining gap is not a derivation failure
