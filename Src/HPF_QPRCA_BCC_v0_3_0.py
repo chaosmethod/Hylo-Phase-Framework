@@ -85,24 +85,31 @@ class ScapDeriver:
       n   = round(N_s^2 / φ^2) = round(220.012) = 220   [geometry-native]
       S_cap_step = S_ent + n * ln(φ) / N_s              [step-limit]
 
-    Why n = N_s^2 / φ^2:
-      The BCC Fibonacci spiral covers N_s^2 lattice cells per full causal
-      arc. Each Fibonacci shell scales the cell count by φ, so the number
-      of shells needed to saturate the arc is N_s^2 / φ^2 (the arc volume
-      divided by the per-shell golden-ratio gain).
+ Why n = N_s^2 / φ^2  (candidate sub-derivation — pending standalone closure):
+      The BCC Fibonacci spiral is expected to cover N_s^2 lattice cells
+      per full causal arc. Each Fibonacci shell contributes per-shell
+      occupancy φ^2 (= φ + 1), so the number of shells needed to saturate
+      the arc is N_s^2 / φ^2 (arc capacity divided by per-shell occupancy).
+      The arc-coverage premise (N_s^2 cells) is currently asserted here
+      and not independently derived elsewhere in the package. A full
+      substrate derivation — likely via pairwise BCC sector coupling
+      across the bipartite mirror structure — is an open obligation.
 
-    Finite-k correction:
-      The step-limit gives S_cap_step = 5.7917.
-      The probe measured 5.7889 (Δ = 0.003).
-      At finite k the logistic gate retains a residual tail near S_cap,
-      compressing the effective corridor by ~0.003.  This is the expected
-      approximation error of the step-function assumption; it is small and
-      does not alter the derivation status.
+    Shell-width resolution (replaces retired finite-k explanation):
+      The step-limit formula gives S_cap_step = 5.7917.
+      The probe measured S_cap_probe = 5.7889 (Δ = 0.003).
+      The formula resolves S_cap to one shell-width δS = ln(φ)/N_s ≈ 0.020.
+      Both values sit inside the same n=220 bin; the 0.003 gap is
+      sub-resolution. A prior note attributed the gap to finite-k
+      logistic-tail behavior; that explanation is retired (numerical sweep
+      across k ∈ [0.5, 10000] showed the integral has a floor at 5.7917
+      and lower k raises S_cap further from the probe, not toward it).
+      See Reference/HPF_Scap_SubstrateNative_Derivation.md §5 (2026-04-15).
 
-    Status: DERIVED / substrate-native.
-    n = 220 is no longer candidate-locked by hand; it is geometry-forced.
-    S_cap = 5.7917 (step) / 5.7889 (probe, within finite-k) is no longer
-    imported.
+    Status: derived / substrate-native under candidate N_s^2-per-arc
+    premise. n = 220 is geometry-native in operative form; the underlying
+    cell-count premise is an open sub-derivation. S_cap = 5.7917 (step) /
+    5.7889 (probe) is no longer imported; residual gap is sub-resolution.
     """
 
     def __init__(self, N_s: int = N_BCC_SECTORS, S_ent: float = S_ENT,
