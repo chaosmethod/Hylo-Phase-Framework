@@ -100,7 +100,7 @@ $$\Delta S = -\sqrt{2} \times (b/72)^2 \approx -7.02 \times 10^{-6}$$
 
 yielding the predicted bound:
 
-$$\boxed{S_{\max}^{\mathrm{corrected}} = 2\sqrt{2} - 7.02 \times 10^{-6} \approx 2.8284201}$$
+$$S_{\max}^{\mathrm{corrected}} = 2\sqrt{2} - \sqrt{2} \left( \frac{b}{72} \right)^2 \approx 2.8284201$$
 
 No hidden variables. No retrocausality. No dual substrates. Just the unavoidable residual of bijective accounting on a finite-capacity BCC lattice.
 
