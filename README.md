@@ -138,7 +138,13 @@ As of v2.3.0, $S_{\rm cap} = 5.7889$ is **fully derived** with no free parameter
 
 $$N_s = 24 \rightarrow n = \mathrm{round}(N_s^2/\varphi^2) = 220 \rightarrow S_{\rm cap} = S_{\rm ent} + n \cdot \frac{\ln\varphi}{N_s} \approx 5.7889.$$
 
-$n = 220$ is geometry-native, not candidate-locked by hand. The finite-$k$ explanation for the legacy 0.003 residual gap is retired; the correct explanation is shell-width resolution $\delta S = \ln(\varphi)/N_s \approx 0.020$, placing both values inside the same $n=220$ bin.
+n=220 is geometry-native via the static identity $round(Ns2/φ2)\mathrm{round}(N_s^2/\varphi^2)
+round(Ns2​/φ2)$ , with rounding margin ≈ 0.5 in $nrawn_{\rm raw}$
+nraw​ units, under a candidate cell-counting premise (the BCC Fibonacci spiral arc-coverage argument, currently in the QPRCA v0.3.0 module docstring, remains the named frontier obligation). The finite-kk
+k explanation for the legacy 0.003 residual gap is retired. The integral-form rounding band of width $ln⁡(φ)/Ns≈0.020\ln(\varphi)/N_s \approx 0.020
+ln(φ)/Ns​≈0.020$ , centered on $nraw=219.742n_{\rm raw}=219.742$
+nraw​=219.742 with edges 5.7841 and 5.8041, places both probe (5.7889) and step-limit (5.7917) values inside the integral form's n=220n=220
+n=220 band. The earlier shell-width-as-resolution framing was retired 2026-05-09; see Reference/HPF_Scap_SubstrateNative_Derivation.md § 5 for the audit and reframe.
 
 ## 4.6 b/72 passive mirror correction
 
