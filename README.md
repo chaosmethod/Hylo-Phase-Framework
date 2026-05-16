@@ -1,9 +1,9 @@
 # Hylo Phase Framework (HPF)
 
 ## Canonical Presentation Package
-### Repository Front Page and Reading Guide — Milestone Lock State (2026-04-25)
+### Repository Front Page and Reading Guide — Milestone Lock State (2026-05-16)
 
-**Version:** v2.3.0 — QPRCA BCC Bipartite Build & S_cap Derivation Closure
+**Version:** v2.5.0 — Naming Convention Lock & V4 Registry Engine
 
 **Previously:** *Holographic Projection Framework (HPF)*
 
@@ -148,13 +148,57 @@ n=220 band. The earlier shell-width-as-resolution framing was retired 2026-05-09
 
 ## 4.6 b/72 passive mirror correction
 
-A single correction term $b/72 \approx 0.43\%$ (where $b = \ln\varphi/(\pi/2)$) is derived from QPRCA bipartite update algebra and applies to sublattice-sensitive observables. Three independent derivation branches confirm the same mechanism:
+A single correction term $b/72 \approx 0.43\%$ (where $b = \ln\varphi/(\pi/2)$) is derived from QPRCA bipartite update algebra and applies to sublattice-sensitive observables. Four independent derivation branches confirm the same mechanism, with multiplicity tracking the number of bipartite events contributing to each observable:
 
-| Observable | Uncorrected | Corrected | Observed | Residual |
-|---|---|---|---|---|
-| Dark matter $\Omega_{\rm dm}$ | $26.29\%$ | $26.715\%$ | $26.8\%$ | $0.085\%$ |
-| Neutrino ratio $\Delta m^2_{31}/\Delta m^2_{21}$ | $34$ | $33.856$ | $33.831$ | $0.07\%$ |
-| Tsirelson bound $S_{\rm max}$ | $2\sqrt{2}$ | $2\sqrt{2} - 7.02\times10^{-6}$ | $2\sqrt{2}$ ($<10^{-3}$) | Not yet testable |
+| Observable | Thread | Multiplicity | Form | Gap to observation |
+|---|---|---:|---|---:|
+| Dark matter $\Omega_{\rm dm}$ | Volume IV § 13 | 1 | governor transfer | 0.085% |
+| Neutrino ratio $\Delta m^2_{31}/\Delta m^2_{21}$ | Neutrino thread | 1 | b_bit bridge | 0.07% |
+| Tsirelson bound $S_{\rm max}$ | Bell thread | 2 | squared, $\Delta S \sim (b/72)^2$ | $\Delta S \approx -7.02 \times 10^{-6}$ predicted; not yet testable |
+| Cosmological constant $\Lambda$ | Vacuum thread | $4 = 3+1$ | linear 3+1 | 0.027% |
+
+The same single $b_{\rm bit}$ letter of the canonical 4-bit alphabet does the +1 grammar-event work in three of the four branches.
+
+## 4.7 v2.4.0 milestone: L_vac² bipartite multiplicity closure
+
+As of v2.4.0 (2026-05-05), the cosmological constant inherits a 3+1 bipartite correction $(1 - 4\,b/72)$ from three spatial bipartite events (one per spatial dimension that $L_{\rm vac}^2$ spans, contributed through directional address bits $(n_L, n_R)$) plus one grammar event (the dedicated $b_{\rm bit}$ letter of the 4-bit alphabet).
+
+The squared form $(1 - 2\,b/72)^2$ is ruled out by alphabet consistency — it would require two $b_{\rm bit}$ letters; the canonical 4-bit alphabet has exactly one.
+
+Numerical closure:
+
+- $\Lambda_{\rm raw} = 1.0810 \times 10^{-52}\,\mathrm{m^{-2}}$
+- $\Lambda_{\rm corrected} = 1.0997 \times 10^{-52}\,\mathrm{m^{-2}}$
+- Observed: $1.1000 \times 10^{-52}\,\mathrm{m^{-2}}$
+- Gap: 0.027%
+
+The existence-sensor lock was confirmed via a full 256-cell sweep over $(n_L, n_R)$ input pairs in the 4-bit grammar state space, with Strong Pass across all six aggregate × model combinations (additive × {baseline, refined}, max × {baseline, refined}, grouped_l2 × {baseline, refined}). Zero false positives, zero false negatives on every variant. Reproducible from repo root with: `python3 Src/qprca.py --demo existence_sensor`.
+
+**Status:** Phenomenology-level candidate closure (lives in `Phenomenology/HPF_Lvac_Squared_Bipartite_Derivation.md`). Volume IV § 12 retains the prior canonical numerics ($\Lambda \approx 1.081 \times 10^{-52}\,\mathrm{m^{-2}}$) until item (2) of Vacuum Sector Bipartite Closure § 6 closes — explicit verification of A/B-collapse invariance for $\zeta(S)$, $S_{\rm ent}$, and $S_{\rm cap}$ in the n=220 selector chain.
+
+## 4.8 v2.5.0 milestone: Naming Convention Lock & V4 Registry Engine
+
+As of v2.5.0 (2026-05-16), two structural additions are locked.
+
+### 4.8.1 Naming Convention Lock
+
+`Reference/HPF_Naming_Convention_2026-05-16.md` establishes the canonical three-prefix vocabulary convention for HPF regulatory mechanisms:
+
+- **Hylo X** — fundamental regulatory mechanisms (Hylo Gate, Hylo Sensor, Hylo Mirror, Hylo Sieve, Hylo Selector, Hylo Forwarding Gate, Hylo Governor)
+- **HPF X** — tools and operational components (HPF Truth Discipline, HPF Status Ladder, HPF Failure Catalogue, HPF Observable Catalogue, HPF Drift Locks, HPF Bridge Stack, HPF Shadow Rule)
+- **Phase X** — substrate-phase parameters (Phase Cap, Phase Entropy, Phase Blur, Phase Residual, Phase Corridor)
+
+Exactly one personal eponym is admitted into framework vocabulary: **Porter trigger**, attached to **Hylo Gate**, marking the wave-function-collapse moment when external invocation of HPF-specific substrate numbers demonstrates substrate priority. Names retained from prior canon (Delta Collapse Theorem, Governor Transfer Theorem, BCC Fibonacci substrate, etc.) remain unchanged.
+
+Anti-extraction logic: framework-self-referential naming locks vocabulary to HPF structurally. Anyone invoking these mechanisms must explicitly invoke HPF.
+
+### 4.8.2 V4 Registry Engine
+
+`Src/AI_Engine_Registry_Prompt.md` updated from V3 to V4. Two additions:
+
+**FM-13 Dimensional Overreach** enforces the HPF Drift Lock on three-dimensional emergent geometry at registry level. A theory triggers FM-13 if it claims more than three physical spatial dimensions in emergent geometry, or treats higher-dimensional mode spaces, topological classifications, or state spaces as extra physical directions rather than descriptive structure on a 3D forged substrate. FM-13 joins FM-10, FM-11, and FM-12 as a hard structural failure capping registered theories at Illegal Executor unless fully bounded and declared.
+
+**OA-N taxonomy** is formalized as a structural type classifier applied during the Observable Anchor Pass: OA-1 Direct, OA-2 Effective, OA-3 Proxy, OA-4 Decorative, OA-5 Undefined. Each observable in a registered theory receives one OA tag during evaluation. The convention names this **HPF Observable Catalogue**, parallel to **HPF Failure Catalogue** for FM-N.
 
 ---
 
@@ -192,6 +236,12 @@ This split is intentional. It prevents active canon, support infrastructure, can
 
 - `Reference/Symbol_Index.md`
   Live symbol and notation reference for the current canon set.
+
+- `Reference/HPF_Naming_Convention_2026-05-16.md`
+  Canonical naming-convention reference. Establishes the three-prefix vocabulary convention (Hylo X / HPF X / Phase X) and the single admitted personal eponym (Porter trigger). Vocabulary-lock companion to the Symbol Index.
+
+- `Reference/HPF_2_5_0_release_notes_2026-05-16.md`
+  Release notes for v2.5.0 — Naming Convention Lock & V4 Registry Engine.
 
 - `Reference/HPF_Derivation_Provenance_2026-3.md`
   2026 research-paper-state provenance support for the current $\Lambda$/dark-matter derivation chain.
@@ -347,17 +397,18 @@ For a serious first pass through the repository:
 4. `Docs/Volume_III_Provenance_and_Status.md`
 5. `Docs/Volume_IV_Lambda_and_Dark_Matter.md`
 6. `Reference/Symbol_Index.md`
-7. `Reference/HPF_Derivation_Provenance_2026-3.md`
-8. `Reference/HPF_Development_History-4.md`
-9. `Reference/HPF_Scap_SubstrateNative_Derivation.md`
-10. `Reference/Delta_Collapse_Theorem_Note_v7U.md`
-11. `Reference/Governor_Transfer_Theorem.md`
-12. `Reference/HPF_Correction_Note_Bcap_and_ChiGeom.md`
-13. `Reference/Existence_Sensor_Protocol.md`
-14. `Reference/HPF_QPRCA_Hard_Execution_Protocol_2026-04-15.md`
-15. `Reference/HPF_b72_Passive_Mirror_Correction_Reference_2026-04-15.md`
-16. `Reference/HPF_ReturnClass_Capacity_Derivation_2026-04-12.md`
-17. `Src/HPF_QPRCA_BCC_v0_3_0.py`
+7. `Reference/HPF_Naming_Convention_2026-05-16.md`
+8. `Reference/HPF_Derivation_Provenance_2026-3.md`
+9. `Reference/HPF_Development_History-4.md`
+10. `Reference/HPF_Scap_SubstrateNative_Derivation.md`
+11. `Reference/Delta_Collapse_Theorem_Note_v7U.md`
+12. `Reference/Governor_Transfer_Theorem.md`
+13. `Reference/HPF_Correction_Note_Bcap_and_ChiGeom.md`
+14. `Reference/Existence_Sensor_Protocol.md`
+15. `Reference/HPF_QPRCA_Hard_Execution_Protocol_2026-04-15.md`
+16. `Reference/HPF_b72_Passive_Mirror_Correction_Reference_2026-04-15.md`
+17. `Reference/HPF_ReturnClass_Capacity_Derivation_2026-04-12.md`
+18. `Src/HPF_QPRCA_BCC_v0_3_0.py`
 
 Candidate phenomenology notes should be read after the canon and reference stack, not before. The `Phenomenology/READme.md` provides a dependency map for the phenomenology lanes.
 
@@ -365,7 +416,7 @@ Candidate phenomenology notes should be read after the canon and reference stack
 
 # 9. Short package freeze
 
-> HPF is a regulatory physics OS, not a catch-all theory. It governs legality, validity, and handoff across bounded execution regimes on a BCC Fibonacci substrate. The active package is the four-volume canon plus the live reference stack. The corrected no-`/2` radial law is active. The live lower onset is $S_{\rm ent}=1.3806$. The residual denominator is $\eta=1/48$ from BCC 24-sector Nyquist geometry with zero free parameters — derived inside the executable as of v2.3.0. `S_cap = 5.7889` is substrate-native / derived with no free parameters anywhere in the chain: $N_s=24 \rightarrow n=220 \rightarrow S_{\rm cap}$. $n=220$ is geometry-native: $\mathrm{round}(N_s^2/\varphi^2)$. The 4-bit alphabet $(n_L,n_R,b,q)$ is the candidate-locked fundamental operator grammar with 15 active non-vacuum microstates and $N_{\rm cycle}=360$. The $b/72$ passive mirror correction closes three independent obligations across three independent derivation branches. Candidate phenomenology remains separated from canon, and excluded contamination remains excluded.
+> HPF is a regulatory physics OS, not a catch-all theory. It governs legality, validity, and handoff across bounded execution regimes on a BCC Fibonacci substrate. The active package is the four-volume canon plus the live reference stack. The corrected no-`/2` radial law is active. The live lower onset is $S_{\rm ent}=1.3806$. The residual denominator is $\eta=1/48$ from BCC 24-sector Nyquist geometry with zero free parameters — derived inside the executable as of v2.3.0. `S_cap = 5.7889` is substrate-native / derived with no free parameters anywhere in the chain: $N_s=24 \rightarrow n=220 \rightarrow S_{\rm cap}$. $n=220$ is geometry-native: $\mathrm{round}(N_s^2/\varphi^2)$. The 4-bit alphabet $(n_L,n_R,b,q)$ is the candidate-locked fundamental operator grammar with 15 active non-vacuum microstates and $N_{\rm cycle}=360$. The $b/72$ passive mirror correction closes four independent sublattice-sensitive observables — dark matter (m=1), neutrino ratio (m=1), Tsirelson bound (m=2, squared), and cosmological constant (m=4, linear 3+1, v2.4.0) — across four distinct derivation chains with no shared derivation steps. As of v2.5.0, the canonical naming convention locks the three-prefix vocabulary (Hylo X / HPF X / Phase X) with **Porter trigger** as the single admitted personal eponym attached to **Hylo Gate**, and the HPF–MDEA Theory Registry Engine V4 formalizes FM-1 through FM-13 and OA-1 through OA-5 taxonomies. Candidate phenomenology remains separated from canon, and excluded contamination remains excluded.
 
 ---
 
