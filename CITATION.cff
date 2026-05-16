@@ -2,13 +2,14 @@ cff-version: 1.2.0
 title: "Hylo Phase Framework (HPF)"
 message: "If you use this repository, please cite it as below."
 type: software
+version: "2.5.0"
 authors:
   - family-names: "Porter"
     given-names: "Eric"
 repository-code: "https://github.com/chaosmethod/Hylo-Phase-Framework"
 abstract: "Hylo Phase Framework (HPF) is a regulatory physics framework for bounded physical evolution, theory-validity governance, and derived Lambda / dark-matter structure."
 license: "Apache-2.0"
-date-released: 2026-03-30
+date-released: 2026-05-16
 preferred-citation:
   type: software
   authors:
@@ -16,5 +17,6 @@ preferred-citation:
       given-names: "Eric"
   title: "Hylo Phase Framework (HPF)"
   year: 2026
+  version: "2.5.0"
   repository-code: "https://github.com/chaosmethod/Hylo-Phase-Framework"
-  notes: "Previously: Holographic Projection Framework (HPF)."
+  notes: "Previously: Holographic Projection Framework (HPF). v2.5.0 — Naming Convention Lock & V4 Registry Engine."
