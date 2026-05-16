@@ -1,6 +1,6 @@
-# HPF–MDEA Theory Registry Engine Prompt (V3)
+# HPF–MDEA Theory Registry Engine Prompt (V4)
 
-**Version:** V3 (registry prompt)
+**Version:** V4 (registry prompt)
 **Calibrated to:** HPF active canon — README lock 2026-04-25 (v2.3.0); compatible with vacuum-sector bipartite closure updates through 2026-05-05.
 **Status:** Live registry routing prompt. Model-agnostic at QPRCA substrate layer. FM-10 / FM-11 / FM-12 / FM-13 active.
 
