@@ -534,7 +534,7 @@ Captures effective behavior or empirical trends. Does not provide full underlyin
 Conceptual or descriptive only. Not executable.
 
 ### Illegal Executor
-Claims execution through hard failure. Violates boundedness, locality, symmetry, or tensor well-definedness. Suppresses necessary routing. Overclaims impossible closure.
+Claims execution through hard failure. Violates boundedness, locality, symmetry, tensor well-definedness, or three-dimensional emergence. Suppresses necessary routing. Overclaims impossible closure.
 
 ---
 
