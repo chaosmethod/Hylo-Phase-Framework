@@ -178,17 +178,17 @@ The trigger criterion now has four confirmed applications:
 
 ## 6. Pending Verification
 
-> **[Updated 2026-05-05 — items (1) and (3) now closed; item (2) remains pending. See top-of-file Superseding Update Note for context.]**
+> **[Updated 2026-05-17 — items (1) and (3) closed 2026-05-05; item (2) partially advanced: cell-counting premise underlying n=220 closed via the bipartite-squaring mechanism (`Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md`). Full closure of item (2) still pending the S_ent first-principles consolidation and the explicit ζ(S) / S_cap A/B-collapse invariance audit. See top-of-file Superseding Update Note for context.]**
 
 The DM closure is substrate-native and ready for promotion to Volume IV § 13 canonical refinement.
 
-The Λ closure requires three remaining items before canonical promotion:
+The Λ closure requires three items before canonical promotion:
 
 1. **Formal derivation** that $L_{\mathrm{vac}}^{2}$ has bipartite multiplicity 2 on the BCC lattice — analogous to how $\kappa_{\mathrm{BCC}} = 8 \times \tfrac{1}{2} \times \tfrac{1}{2} = 2$ already encodes bipartite split appearing twice for related geometric reasons. **[CLOSED 2026-05-05 by HPF_Lvac_Squared_Bipartite_Derivation (consolidated v4) — with the structural correction that the substrate-native multiplicity is 4 (linear 3+1), not 2 (squared). The original framing of this item was against the squared form; the consolidated derivation supersedes that framing.]**
-2. **Confirmation** that no additional bipartite-sensitive factors enter the Λ chain ($R_{H}$ propagation, $n=220$ selection, integral bounds). **[STILL PENDING — explicit verification of ζ(S), S_ent, S_cap A/B-collapse invariance is the next concrete obligation. See the consolidated derivation's Appendix D § D.5 for the audit-path note and the n=220 numerical robustness margin.]**
+2. **Confirmation** that no additional bipartite-sensitive factors enter the Λ chain ($R_{H}$ propagation, $n=220$ selection, integral bounds). **[PARTIALLY CLOSED 2026-05-17 — the cell-counting premise underlying $n=220$ selection is now derived / substrate-native via the bipartite-squaring mechanism (`Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md`), removing the "candidate cell-counting premise" qualifier from the $n=220$ chain. The same inference pattern as RCC's $(P'(\varphi))^2 = 5$, $\eta = 1/48$, and the b/72 passive mirror residual. Full closure of item (2) requires (a) explicit verification of $\zeta(S)$, $S_{\rm ent}$, $S_{\rm cap}$ A/B-collapse invariance (companion audit progress note, `Reference/HPF_Vacuum_Sector_Item2_Audit_Progress_2026-05-17.md`), and (b) the S_ent first-principles consolidation (excavation-shaped: pull DCT v7U § 8 Obligation 2, Lower Wall Nyquist Correction, and Entanglement Obligation Closure § 2.2 into a single canonical Reference note). See the consolidated derivation's Appendix D § D.5 for the audit-path note and the $n=220$ numerical robustness margin.]**
 3. **Independent execution-lock** via 256/256 existence-sensor sweep on the $b/72$-corrected vacuum-sector outputs. **[CLOSED 2026-05-05 — `Src/qprca.py` existence-sensor sweep run on 2026-05-05 returned 256/256 Strong Pass across all six aggregate × model combinations (zero false positives, zero false negatives every variant). Documented in Appendix D of the consolidated derivation; reproducible by running `python3 Src/qprca.py --demo existence_sensor`.]**
 
-Until item (2) is completed, the Λ correction is candidate-strong rather than canonical.
+Until item (2) is fully completed (cell-counting closure + bipartite A/B-collapse audit + S_ent consolidation), the Λ correction is candidate-strong rather than canonical. The 2026-05-17 cell-counting closure advances item (2) from "STILL PENDING" to "PARTIALLY CLOSED."
 
 ---
 
