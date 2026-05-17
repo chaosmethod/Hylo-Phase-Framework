@@ -85,15 +85,19 @@ class ScapDeriver:
       n   = round(N_s^2 / φ^2) = round(220.012) = 220   [geometry-native]
       S_cap_step = S_ent + n * ln(φ) / N_s              [step-limit]
 
- Why n = N_s^2 / φ^2  (candidate sub-derivation — pending standalone closure):
-      The BCC Fibonacci spiral is expected to cover N_s^2 lattice cells
-      per full causal arc. Each Fibonacci shell contributes per-shell
-      occupancy φ^2 (= φ + 1), so the number of shells needed to saturate
-      the arc is N_s^2 / φ^2 (arc capacity divided by per-shell occupancy).
-      The arc-coverage premise (N_s^2 cells) is currently asserted here
-      and not independently derived elsewhere in the package. A full
-      substrate derivation — likely via pairwise BCC sector coupling
-      across the bipartite mirror structure — is an open obligation.
+ Why n = N_s^2 / φ^2  (substrate-native via bipartite-squaring mechanism):
+      The BCC Fibonacci spiral covers N_s^2 = 576 lattice cells per full
+      causal arc, where N_s^2 arises from bipartite ordered-pair indexing
+      of A-origin and B-destination angular sectors (24 × 24) under the
+      QPRCA alternating-half-tick protocol. Each Fibonacci shell contributes
+      per-shell occupancy φ^2 (= φ + 1), where the squaring arises from
+      Fibonacci linear growth compounded across one A-half-step plus one
+      B-half-step. Both N_s^2 and φ^2 follow from the same bipartite-
+      squaring mechanism that grounds (P'(φ))^2 = 5 in the Return-Class
+      Capacity derivation. See
+      Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md for the
+      full closure (executable mechanism verification + 3D substrate
+      derivation; same inference pattern as RCC, η = 1/48, b/72).
 
     Shell-width resolution (replaces retired finite-k explanation):
       The step-limit formula gives S_cap_step = 5.7917.
@@ -106,10 +110,13 @@ class ScapDeriver:
       and lower k raises S_cap further from the probe, not toward it).
       See Reference/HPF_Scap_SubstrateNative_Derivation.md §5 (2026-04-15).
 
-    Status: derived / substrate-native under candidate N_s^2-per-arc
-    premise. n = 220 is geometry-native in operative form; the underlying
-    cell-count premise is an open sub-derivation. S_cap = 5.7917 (step) /
-    5.7889 (probe) is no longer imported; residual gap is sub-resolution.
+    Status: derived / substrate-native. n = 220 is geometry-native via the
+    bipartite-squaring mechanism (see
+    Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md). The
+    cell-count premise (N_s^2 cells per arc) and per-shell occupancy (φ^2)
+    are now both substrate-derived from QPRCA primitives rather than
+    asserted. S_cap = 5.7917 (step) / 5.7889 (probe) is no longer imported;
+    residual gap is sub-resolution.
     """
 
     def __init__(self, N_s: int = N_BCC_SECTORS, S_ent: float = S_ENT,
