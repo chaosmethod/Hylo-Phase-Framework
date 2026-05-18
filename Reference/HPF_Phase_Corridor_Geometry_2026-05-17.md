@@ -1,8 +1,8 @@
 # HPF Phase Corridor Geometry — Reference
 
-**Document Class:** HPF reference note
-**Status:** Compiled from existing canon. Consolidates corridor-geometry facts that live implicitly across Volume I § 23, the $S_{\rm cap}$ derivation note, the $b/72$ mirror correction note, and the neutrino mass hierarchy note. Promotes nothing into canon; alters no truth-status partition.
-**Author:** Eric Keaton Porter
+**Document Class:** HPF reference note  
+**Status:** Compiled from existing canon. Consolidates corridor-geometry facts that live implicitly across Volume I § 23, the $S_{\rm cap}$ derivation note, the $b/72$ mirror correction note, and the neutrino mass hierarchy note. Reflects the cell-counting premise closure of 2026-05-17 (§ 4); otherwise promotes nothing into canon and alters no truth-status partition.  
+**Author:** Eric Keaton Porter  
 **Date:** 2026-05-17
 
 ---
