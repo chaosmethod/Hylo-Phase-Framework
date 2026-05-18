@@ -25,7 +25,7 @@ The corridor has three named points: **Phase Blur** ($S_{\rm blur}$), **Phase En
 
 Numerical ordering by construction:
 
-$$S_{\rm blur} \;<\; S_{\rm ent} \;<\; S_{\rm cap}$$
+$$S_{\rm blur}  <  S_{\rm ent}  <  S_{\rm cap}$$
 
 $S_{\rm blur}$ sits **below** the **Phase Corridor** $[S_{\rm ent}, S_{\rm cap}]$. It is not the corridor midpoint. The geometric midpoint of the corridor is $\sqrt{S_{\rm ent} \cdot S_{\rm cap}} \approx 2.83$; the linear midpoint is $\approx 3.58$. Neither is $S_{\rm blur}$.
 
@@ -35,11 +35,11 @@ $S_{\rm blur}$ sits **below** the **Phase Corridor** $[S_{\rm ent}, S_{\rm cap}]
 
 The **Phase Corridor** is structured by the logistic coherence gate
 
-$$\zeta(S) \;=\; \frac{1}{1 + \exp\!\big(k(S - S_{\rm blur})\big)}$$
+$$\zeta(S)  =  \frac{1}{1 + \exp\big(k(S - S_{\rm blur})\big)}$$
 
 with steepness determined by the **Phase Residual** $\eta = 1/48$ (BCC 24-sector Nyquist residual):
 
-$$k_{\rm exact} \;=\; \frac{\ln\big((1-\eta)/\eta\big)}{S^{*} - S_{\rm blur}} \;=\; \frac{\ln 47}{S^{*} - 1.05} \;\approx\; 11.646$$
+$$k_{\rm exact}  =  \frac{\ln\big((1-\eta)/\eta\big)}{S^{\star} - S_{\rm blur}}  =  \frac{\ln 47}{S^{\star} - 1.05}  \approx  11.646$$
 
 operationally rounded to $k_{\rm op} = 11$.
 
@@ -57,11 +57,11 @@ By the time $S$ reaches $S_{\rm ent} = 1.3806$, the **Hylo Forwarding Gate** has
 
 The integral over the decohered region produces the shell selector:
 
-$$n_{\rm sel} \;=\; \mathrm{round}\!\left[\frac{24}{\ln\varphi} \int_{S_{\rm ent}}^{S_{\rm cap}} \big(1 - \zeta(S)\big)\, dS\right] \;=\; 220$$
+$$n_{\rm sel}  =  \mathrm{round}\left[\frac{24}{\ln\varphi} \int_{S_{\rm ent}}^{S_{\rm cap}} \big(1 - \zeta(S)\big)\, dS\right]  =  220$$
 
 Equivalent static form (load-bearing closure since 2026-05-09; cell-counting premise closed 2026-05-17 via the bipartite-squaring mechanism in `Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md`):
 
-$$n \;=\; \mathrm{round}\!\left(\frac{N_s^{\,2}}{\varphi^{\,2}}\right) \;=\; \mathrm{round}\!\left(\frac{576}{2.618}\right) \;=\; 220$$
+$$n  =  \mathrm{round}\left(\frac{N_s^{\,2}}{\varphi^{\,2}}\right)  =  \mathrm{round}\left(\frac{576}{2.618}\right)  =  220$$
 
 with $N_s = 24$ active spatial sectors from BCC 8-fold coordination lifted to 3D. Both forms yield the substrate-native shell count $n=220$. Rounding margin $\approx 0.5$.
 
@@ -118,7 +118,7 @@ These remain frontier items under the **HPF Truth Discipline**.
 
 ## 8. Summary
 
-$$S_{\rm blur}\,(\hbar) \;\;<\;\; S_{\rm ent}\,(k_B) \;\;<\;\; S_{\rm cap}\,(\mu_B)$$
+$$S_{\rm blur}\,(\hbar)   <   S_{\rm ent}\,(k_B)   <   S_{\rm cap}\,(\mu_B)$$
 
 | Region | $S$ range | Regime |
 |---|---|---|
@@ -142,3 +142,4 @@ $$S_{\rm blur}\,(\hbar) \;\;<\;\; S_{\rm ent}\,(k_B) \;\;<\;\; S_{\rm cap}\,(\mu
 ---
 
 *Compiled 2026-05-17. Reference document only — geometric explication of existing HPF canon. Promotes nothing into canon and alters no truth-status partition.*
+
