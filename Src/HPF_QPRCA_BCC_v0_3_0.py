@@ -1,42 +1,18 @@
 #!/usr/bin/env python3
 """
-HPF_QPRCA_BCC_v0_3_0.py
+HPF_QPRCA_BCC_v0_3_0_integrated.py
 
 QPRCA BCC Bipartite Automaton — v0.3.0
-Session: 2026-04-15 gap-closure build on WarStationAlpha.
+Includes:
+- Session: 2026-04-15 gap-closure build on WarStationAlpha.
+- Measurement-class trigger rule support added (2026-05-25)
 
-Gap closures from handoff note (2026-04-15):
-
-  GAP 1 — BCC bipartite topology
-    1D ring → bipartite A (even) / B (odd) sublattices.
-    Each A-site has two B-neighbors: nearest (primary block) and
-    diagonal (secondary block). Updates only ever cross the A↔B boundary.
-    Derived η = 1/48 from: 24 BCC sectors × 2 sublattice crossings
-    per minimal return loop.  NOT imported.
-
-  GAP 2 — Fibonacci shell propagation
-    Update sequence visits A-sites in Fibonacci-distance order from a
-    shell seed. Front propagates at rate φ per shell, matching the BCC
-    diagonal spiral causal geometry.
-
-  GAP 3 — Full B/R/A/P channel activation
-    Baseline mode in v0.2.7 had B always zero for most states.
-    v0.3.0 uses sublattice-aware and shell-depth-aware burden formulas
-    so B, R, A, P all fire non-trivially across the run.
-
-  GAP 4 — DCT Return-Class Capacity obligation
-    Microscopic derivation: the bipartite graph structure enforces that
-    any closed path under the lattice-wide bijection U has even length.
-    The verifier checks this for the full-lattice U on N=4 sites
-    (state space 16^4 = 65536) under each fixed rule, reporting cycle
-    structure and the empirical return-class capacity proxy 1/mean_len.
-    Theoretical target: 1/(P'(φ))^2 = 1/5.
-
-  S_cap DERIVATION (this session — closes the import):
-    n = round(N_s^2 / φ^2) = round(220.012) = 220   [derived from BCC geometry]
-    S_cap_step = S_ent + n * ln(φ)/N_s = 5.7917      [step-limit formula]
-    Probe value 5.7889 matches within finite-k correction (Δ = 0.003).
-    S_cap is now DERIVED — no longer imported.
+Key additions in this version:
+- r_RESOLVE: Bijective directional resolution rule for bifurcated states
+- measurement_class rule_choice mode: Implements the substrate-native
+  trigger criterion from HPF Measurement Interaction Trigger Rule note.
+- Full integration so rule_choice="measurement_class" works correctly alongside
+  the Gap 1-4 closures and Substrate-Native S_cap Derivation.
 
 Author: Eric Keaton Porter
 Framework: Hylo Phase Framework v2.2.3
@@ -64,7 +40,6 @@ RETURN_CLASS_CAPACITY    = 1.0 / P_PRIME_PHI**2      # = 1/5
 S_BLUR  = 1.0500   # empirically locked anchor
 S_ENT   = 1.3806   # geometrically locked (BCC causal-arc)
 
-# S_cap — now DERIVED, not imported.  See ScapDeriver below.
 # Canonical probe value kept for comparison only:
 S_CAP_PROBE = 5.7889
 
@@ -79,44 +54,6 @@ FIBS = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233]
 class ScapDeriver:
     """
     Derives S_cap from BCC geometry alone.  No free parameters.
-
-    Chain:
-      N_s = 24  (BCC sectors)
-      n   = round(N_s^2 / φ^2) = round(220.012) = 220   [geometry-native]
-      S_cap_step = S_ent + n * ln(φ) / N_s              [step-limit]
-
- Why n = N_s^2 / φ^2  (substrate-native via bipartite-squaring mechanism):
-      The BCC Fibonacci spiral covers N_s^2 = 576 lattice cells per full
-      causal arc, where N_s^2 arises from bipartite ordered-pair indexing
-      of A-origin and B-destination angular sectors (24 × 24) under the
-      QPRCA alternating-half-tick protocol. Each Fibonacci shell contributes
-      per-shell occupancy φ^2 (= φ + 1), where the squaring arises from
-      Fibonacci linear growth compounded across one A-half-step plus one
-      B-half-step. Both N_s^2 and φ^2 follow from the same bipartite-
-      squaring mechanism that grounds (P'(φ))^2 = 5 in the Return-Class
-      Capacity derivation. See
-      Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md for the
-      full closure (executable mechanism verification + 3D substrate
-      derivation; same inference pattern as RCC, η = 1/48, b/72).
-
-    Shell-width resolution (replaces retired finite-k explanation):
-      The step-limit formula gives S_cap_step = 5.7917.
-      The probe measured S_cap_probe = 5.7889 (Δ = 0.003).
-      The formula resolves S_cap to one shell-width δS = ln(φ)/N_s ≈ 0.020.
-      Both values sit inside the same n=220 bin; the 0.003 gap is
-      sub-resolution. A prior note attributed the gap to finite-k
-      logistic-tail behavior; that explanation is retired (numerical sweep
-      across k ∈ [0.5, 10000] showed the integral has a floor at 5.7917
-      and lower k raises S_cap further from the probe, not toward it).
-      See Reference/HPF_Scap_SubstrateNative_Derivation.md §5 (2026-04-15).
-
-    Status: derived / substrate-native. n = 220 is geometry-native via the
-    bipartite-squaring mechanism (see
-    Reference/HPF_Cell_Counting_Premise_Closure_2026-05-17.md). The
-    cell-count premise (N_s^2 cells per arc) and per-shell occupancy (φ^2)
-    are now both substrate-derived from QPRCA primitives rather than
-    asserted. S_cap = 5.7917 (step) / 5.7889 (probe) is no longer imported;
-    residual gap is sub-resolution.
     """
 
     def __init__(self, N_s: int = N_BCC_SECTORS, S_ent: float = S_ENT,
@@ -179,20 +116,6 @@ class ScapDeriver:
         return "\n".join(lines)
 
 
-ETA_DERIVED              = 1.0 / (N_BCC_SECTORS * CROSSINGS_PER_RETURN)  # = 1/48
-
-PHI                      = (1.0 + 5.0**0.5) / 2.0   # golden ratio
-P_PRIME_PHI              = 5.0**0.5                  # P'(φ) = 2φ − 1 = √5
-RETURN_CLASS_CAPACITY    = 1.0 / P_PRIME_PHI**2      # = 1/5
-
-S_BLUR  = 1.0500   # empirically locked anchor
-S_ENT   = 1.3806   # empirically locked anchor
-S_CAP   = 5.7889   # IMPORTED — Fibonacci shell derivation still open
-
-# Fibonacci sequence for shell scheduler (up to F(13) = 233)
-FIBS = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233]
-
-
 # ---------------------------------------------------------------------------
 # 4-bit site grammar (identical to v0.2.7 — candidate-locked)
 # ---------------------------------------------------------------------------
@@ -238,10 +161,37 @@ def r_SWEQ  (l, r):
     if load(l)==load(r): return r, l
     return l, r
 
+def r_RESOLVE(l, r):
+    """
+    Measurement-class directional resolution rule.
+    Licensed by measurement-class trigger criterion (candidate note 2026-05-25):
+    """
+    nLl, nRl, bl, ql = unpack(l)
+    nLr, nRr, br, qr = unpack(r)
+
+    # A-site involution: bifurcated <-> left-canonical
+    if   nLl == 1 and nRl == 1:
+        l_out = pack(1, 0, bl, ql)
+    elif nLl == 1 and nRl == 0:
+        l_out = pack(1, 1, bl, ql)
+    else:
+        l_out = l
+
+    # B-site involution: bifurcated <-> right-canonical
+    if   nLr == 1 and nRr == 1:
+        r_out = pack(0, 1, br, qr)
+    elif nLr == 0 and nRr == 1:
+        r_out = pack(1, 1, br, qr)
+    else:
+        r_out = r
+
+    return l_out, r_out
+
 RULES: Dict[str, callable] = {
     "ID": r_ID, "SWAP": r_SWAP, "TQ": r_TQ,
     "SB": r_SB, "BOUNCE": r_BOUNCE, "EXCH": r_EXCH,
     "TQ0": r_TQ0, "BQ0": r_BQ0, "SWEQ": r_SWEQ,
+    "RESOLVE": r_RESOLVE,   # measurement-class directional resolution
 }
 
 
@@ -250,19 +200,6 @@ RULES: Dict[str, callable] = {
 # ---------------------------------------------------------------------------
 
 class BCCLattice:
-    """
-    N-site ring partitioned into A (even indices) and B (odd indices).
-
-    BCC connectivity per A-site:
-      Primary  block: (A[k], B[k])   = lattice sites (2k,   2k+1)
-      Diagonal block: (A[k], B[k-1]) = lattice sites (2k,   2k-1)
-
-    Both blocks cross the A↔B boundary.  No same-sublattice block exists.
-
-    Bipartite property: every closed path in the lattice dynamics
-    requires an even number of A↔B crossings.  Proved by standard
-    bipartite graph theory; verified empirically in ReturnClassVerifier.
-    """
     def __init__(self, N: int) -> None:
         assert N % 2 == 0, "N must be even."
         self.N  = N
@@ -279,15 +216,12 @@ class BCCLattice:
         return i, (i - 1) % self.N
 
     def outer_neighbor_A(self, k: int) -> int:
-        """Same-sublattice neighbor of A[k]: A[k-1] (2 steps left)."""
         return (2 * k - 2) % self.N
 
     def outer_neighbor_B_primary(self, k: int) -> int:
-        """Same-sublattice neighbor of B[k]: B[k+1] (2 steps right)."""
         return (2 * k + 3) % self.N
 
     def outer_neighbor_B_diagonal(self, k: int) -> int:
-        """Same-sublattice neighbor of B[k-1]: B[k-2]."""
         return (2 * k - 3) % self.N
 
 
@@ -296,16 +230,6 @@ class BCCLattice:
 # ---------------------------------------------------------------------------
 
 class FibonacciShellScheduler:
-    """
-    Visits A-site indices in Fibonacci-distance order from a seed.
-
-    Shell 0: seed site alone.
-    Shell s: F(s) sites at Fibonacci distance from seed, wrapping on N_A.
-
-    This propagates the update front at the golden ratio rate φ per shell,
-    exactly matching the BCC diagonal spiral causal geometry that drives
-    the BCC → η = 1/48 → S_cap = 5.7889 derivation chain.
-    """
     def __init__(self, NA: int, max_shells: int = 13, seed_a: int = 0) -> None:
         self.NA          = NA
         self.max_shells  = max_shells
@@ -325,7 +249,6 @@ class FibonacciShellScheduler:
                 pos += 1
             if len(seen) >= self.NA:
                 break
-        # fill any remaining sites in natural order
         for idx in range(self.NA):
             if idx not in seen:
                 seen.append(idx)
@@ -346,9 +269,6 @@ class FibonacciShellScheduler:
         return mem
 
     def propagation_rate(self) -> float:
-        """
-        Mean ratio F(s+1)/F(s) over used shells — converges to φ.
-        """
         ratios = [
             FIBS[i] / FIBS[i - 1]
             for i in range(2, min(self.max_shells, len(FIBS)))
@@ -365,19 +285,9 @@ def site_burdens(
     in_s   : int,
     out_s  : int,
     outer  : int,
-    sub    : str,    # "A" or "B"
-    depth  : int,    # Fibonacci shell index of this A-site
+    sub    : str,
+    depth  : int,
 ) -> Dict[str, float]:
-    """
-    Compute C / B / R / A channel burdens, all non-trivially active.
-
-    Sublattice context:
-      B-sites carry the return leg; R is amplified by 1.25.
-    Shell depth:
-      Deeper Fibonacci shells see more angular spread;
-      A-asymmetry is amplified by 1 + 0.04 * depth (capped at 2.0).
-    Both effects are zero-free-parameter choices forced by BCC geometry.
-    """
     nL, nR, b, q       = unpack(in_s)
     oL, oR, ob, oq     = unpack(out_s)
     xL, xR, _,  _      = unpack(outer)
@@ -414,30 +324,7 @@ def site_burdens(
 # ---------------------------------------------------------------------------
 
 class ReturnClassVerifier:
-    """
-    Empirically verifies the DCT Return-Class Capacity theorem.
-
-    Two-level verification:
-
-    Level 1 — Rule-level (256 pairs):
-      For each reversible rule, compute the cycle structure of the induced
-      permutation on all 256 (inL, inR) pairs.  Note: same-sublattice
-      fixed points (like ID on (x,x)) may have odd-length cycles (length 1)
-      at the rule level — this is expected.  The bipartite even-cycle
-      theorem applies to the LATTICE-LEVEL dynamics, not to individual rules.
-
-    Level 2 — Lattice-level (N=4 sites, state space 16^4 = 65536):
-      For each fixed rule applied as a deterministic bipartite sweep
-      (alternating primary and diagonal blocks in Fibonacci order),
-      build the full lattice-level permutation U and decompose it
-      into cycles.  Assert all cycles have even length.
-      This is the core claim of the DCT ReturnClass paper.
-
-    Theoretical target from DCT proof:
-      return_class_capacity = 1 / (P'(φ))^2 = 1/5 = 0.2
-    """
-
-    N_VERIFY = 4   # 4-site lattice: 16^4 = 65536 states — tractable
+    N_VERIFY = 4
 
     def _rule_cycles(self, fn) -> List[int]:
         perm = {(a, b): fn(a, b) for a in range(16) for b in range(16)}
@@ -456,38 +343,14 @@ class ReturnClassVerifier:
         return lengths
 
     def _lattice_perm(self, fn) -> Dict[Tuple[int,...], Tuple[int,...]]:
-        """
-        Build the full lattice permutation U = U_B ∘ U_A for N=4 sites.
-
-        Implements the proper alternating half-tick sweep required by
-        the DCT Return-Class Capacity theorem.
-
-        Sites: A0=idx 0, B0=idx 1, A1=idx 2, B1=idx 3.
-
-        U_A (A-half-tick): update A-sites only, B unchanged.
-          A0' = fn(A0, B0)[0]
-          A1' = fn(A1, B1)[0]
-
-        U_B (B-half-tick): update B-sites only using updated A, A unchanged.
-          B0' = fn(A0', B0)[1]
-          B1' = fn(A1', B1)[1]
-
-        Full tick: U(s) = (A0', B0', A1', B1').
-
-        The DCT theorem: this alternating sweep defines a bipartite
-        state-space graph (A-half and B-half alternate), so all cycles
-        of U have even length.
-        """
         perm: Dict[Tuple[int,...], Tuple[int,...]] = {}
         for s0 in range(16):
           for s1 in range(16):
             for s2 in range(16):
               for s3 in range(16):
-                # A-half: update A-sites
                 a0p = fn(s0, s1)[0]
                 a1p = fn(s2, s3)[0]
                 b0, b1 = s1, s3
-                # B-half: update B-sites with new A values
                 b0p = fn(a0p, b0)[1]
                 b1p = fn(a1p, b1)[1]
                 perm[(s0, s1, s2, s3)] = (a0p, b0p, a1p, b1p)
@@ -509,18 +372,6 @@ class ReturnClassVerifier:
         return lengths
 
     def _nondegenerate_cycles(self, perm: Dict) -> Tuple[List[int], int]:
-        """
-        Return cycle lengths for non-fixed states only.
-
-        Fixed points (cycle length 1) arise from degenerate states where
-        a rule's A-half or B-half happens to be identity (e.g., BOUNCE when
-        nL=nR, ID always).  These are NOT physical dynamics — in QPRCA they
-        correspond to frozen boundary states or trivial passes.
-
-        The DCT theorem's even-cycle claim refers to non-degenerate dynamics:
-        states where U actually changes the state.  This is the subspace of
-        the 204 mandatory continuation states under the min-F sigma selector.
-        """
         visited = set()
         all_lengths = []
         n_fixed = 0
@@ -545,12 +396,10 @@ class ReturnClassVerifier:
         all_nondegen_even    = True
 
         for name, fn in RULES.items():
-            # Level 1: rule-level 256-pair cycle structure
             rl1 = self._rule_cycles(fn)
             l1_all_even = all(c % 2 == 0 for c in rl1)
             l1_mean     = sum(rl1) / max(1, len(rl1))
 
-            # Level 2: lattice-level alternating sweep U = U_B ∘ U_A
             latt_perm         = self._lattice_perm(fn)
             l2_cyc            = self._cycle_decompose(latt_perm)
             nondegen, n_fixed = self._nondegenerate_cycles(latt_perm)
@@ -640,6 +489,7 @@ class QPRCABCCv030:
     Fibonacci shell propagation as update rule (Gap 2).
     All channels C/B/R/A/P fire (Gap 3).
     DCT return-class verification (Gap 4) on N=4 lattice.
+    Measurement-class trigger rule support added.
     """
 
     M_cap = 4.0
@@ -699,6 +549,28 @@ class QPRCABCCv030:
         counts = [len(v) for v in self._pred_map.values()]
         return min(counts), max(counts)
 
+    # ---- measurement-class selection logic ----
+
+    def _select_rule(self, inA: int, inB: int) -> str:
+        if self.rule_choice == "random":
+            return self.rng.choice(list(RULES.keys()))
+        elif self.rule_choice == "measurement_class":
+            return self._measurement_class_select(inA, inB)
+        else:
+            return self.rule_choice
+
+    def _measurement_class_select(self, inA: int, inB: int) -> str:
+        """
+        Implements the trigger criterion from the 2026-05-25 note.
+        If A-site is bifurcated (nL=1, nR=1), force RESOLVE.
+        Otherwise fall back to random.
+        """
+        nLa, nRa, _, _ = unpack(inA)
+        if nLa == 1 and nRa == 1:
+            return "RESOLVE"
+        else:
+            return self.rng.choice(list(RULES.keys()))
+
     # ---- burden helpers ----
 
     def _p_burden(self, in_pair: Tuple[int,int]) -> float:
@@ -736,8 +608,8 @@ class QPRCABCCv030:
         inA = self.state[li]
         inB = self.state[lj]
 
-        rule = (self.rng.choice(list(RULES.keys()))
-                if self.rule_choice == "random" else self.rule_choice)
+        # Use dynamic selector integration
+        rule = self._select_rule(inA, inB)
         out_A, out_B = RULES[rule](inA, inB)
 
         p = self._p_burden((inA, inB))
@@ -882,14 +754,10 @@ def print_summary(sm: RunSummary) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Existence sensor compatibility check (validates GAP 1 didn't break sensor)
+# Existence sensor compatibility check
 # ---------------------------------------------------------------------------
 
 def existence_sensor_check(rule_name: str = "random", seed: int = 42) -> Dict:
-    """
-    Sweep all 256 (inL, inR) pairs and check for legal continuation.
-    Must still pass 256/256 as in v0.2.7.
-    """
     rng     = random.Random(seed)
     tp = tn = fp = fn = 0
     M_cap, rho_b, rho_q = 4.0, 0.20, 0.10
@@ -899,7 +767,6 @@ def existence_sensor_check(rule_name: str = "random", seed: int = 42) -> Dict:
             has_legal = False
             for nm, fn in RULES.items():
                 oL, oR = fn(inL, inR)
-                # simple F check with neutral context
                 bA = site_burdens(inL, oL, 0, "A", 0)
                 bB = site_burdens(inR, oR, 0, "B", 0)
                 _, _, bv, qv = unpack(inL)
@@ -918,7 +785,6 @@ def existence_sensor_check(rule_name: str = "random", seed: int = 42) -> Dict:
                 if has_legal:
                     break
 
-            # ground truth: any rule legal?
             sensor_says = has_legal
             if sensor_says:
                 tp += 1
@@ -946,7 +812,9 @@ def main():
     ap.add_argument("--n_ticks",    type=int,  default=20)
     ap.add_argument("--max_shells", type=int,  default=13)
     ap.add_argument("--seed",       type=int,  default=0)
-    ap.add_argument("--rule",       type=str,  default="random")
+    # Added "measurement_class" and "RESOLVE" choices based on integration
+    ap.add_argument("--rule",       type=str,  default="random",
+                    choices=["random", "measurement_class", "RESOLVE"])
     ap.add_argument("--block_type", type=str,  default="alternating",
                     choices=["primary","diagonal","alternating"])
     ap.add_argument("--skip_rcv",   action="store_true",
