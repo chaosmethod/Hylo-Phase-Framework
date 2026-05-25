@@ -488,5 +488,5 @@ If the reader needs the canonical architecture with the active vacuum branch, se
 
 ## 34\. Final compact statement
 
-HPF should now be read as a finite-capacity regulatory framework whose authority order is fixed, whose legality/validity split is non-negotiable, whose microscopic executable line is grounded in a candidate-locked 4-bit substrate grammar, whose vacuum-sector branch uses the corrected no-`/2` radial law and a separated Lambda / dark-matter derivation chain, and whose candidate phenomenology lanes remain explicitly fenced off from canon until their stated obligations close.
+Item 7 was added on 2026-05-25 following closure of Obligation Q2 in the Measurement Interaction Trigger Rule candidate note. The Born rule gap is deliberately left open as the next priority.
 
