@@ -465,6 +465,8 @@ The active framework still has genuine open fronts:
 4. strongest-form Lambda derivation without relying on an external Hubble anchor,
 5. first-principles constitutive closure of the lower geometry-validity wall,
 6. completion of the isolated obligations in the candidate phenomenology notes.
+7. measurement-class trigger rule: derivation of the physical coupling → grammar operation bridge from QPRCA update algebra, specifying which interaction classes legally constrain rule selection to the directional-resolving subset.  
+Status (2026-05-25): Candidate-level closure achieved in HPF Measurement Interaction Trigger Rule (2026-05-25). `r\_RESOLVE` and `measurement\_class` rule_choice mode implemented and execution-locked. Born rule routing probability remains explicitly open as the correct next target.
 
 These are not embarrassments. They are the framework’s explicitly marked unfinished work.
 
